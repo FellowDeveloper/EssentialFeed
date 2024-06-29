@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "FE824BEB-F496-4CAE-9C41-44E64F68B4A3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed02.xcodeproj",
+        "identifier" : "3AF85AE72BC102AC004FBE32",
+        "name" : "EssentialFeed02Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
