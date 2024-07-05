@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "34880A22-F05A-4A77-B1CB-5F07320BFC5F",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "testTimeoutsEnabled" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:EssentialFeed02.xcodeproj",
+          "identifier" : "3AF85ADF2BC102AB004FBE32",
+          "name" : "EssentialFeed02"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed02.xcodeproj",
+        "identifier" : "3AF85AE72BC102AC004FBE32",
+        "name" : "EssentialFeed02Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed02.xcodeproj",
+        "identifier" : "3A5B37792C30D9AE00421DAA",
+        "name" : "EssentialFeedAPIEndToEndTests"
+      }
+    }
+  ],
+  "version" : 1
+}
