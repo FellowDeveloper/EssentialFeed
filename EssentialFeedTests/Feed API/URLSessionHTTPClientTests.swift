@@ -1,12 +1,12 @@
 //
 //  URLSessionHTTPClientTests.swift
-//  EssentialFeed02Tests
+//  EssentialFeedTests
 //
 //  Created by Anton Tugolukov on 5/27/24.
 //
 
 import XCTest
-import EssentialFeed02
+import EssentialFeed
 
 final class URLSessionHTTPClientTests: XCTestCase {
     

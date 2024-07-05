@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3AF85ADF2BC102AB004FBE32"
-               BuildableName = "EssentialFeed02.framework"
-               BlueprintName = "EssentialFeed02"
-               ReferencedContainer = "container:EssentialFeed02.xcodeproj">
+               BuildableName = "EssentialFeed.framework"
+               BlueprintName = "EssentialFeed"
+               ReferencedContainer = "container:EssentialFeed.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,22 +29,10 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:EssentialFeed02.xctestplan"
+            reference = "container:CI.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AF85AE72BC102AC004FBE32"
-               BuildableName = "EssentialFeed02Tests.xctest"
-               BlueprintName = "EssentialFeed02Tests"
-               ReferencedContainer = "container:EssentialFeed02.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -67,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3AF85ADF2BC102AB004FBE32"
-            BuildableName = "EssentialFeed02.framework"
-            BlueprintName = "EssentialFeed02"
-            ReferencedContainer = "container:EssentialFeed02.xcodeproj">
+            BuildableName = "EssentialFeed.framework"
+            BlueprintName = "EssentialFeed"
+            ReferencedContainer = "container:EssentialFeed.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

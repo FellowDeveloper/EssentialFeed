@@ -1,13 +1,13 @@
 //
-//  EssentialFeed02Tests.swift
-//  EssentialFeed02Tests
+//  EssentialFeedTests.swift
+//  EssentialFeedTests
 //
 //  Created by Anton Tugolukov on 4/5/24.
 //
 
 import XCTest
 
-import EssentialFeed02
+import EssentialFeed
 
 final class RemoteFeedLoaderTests: XCTestCase {
     

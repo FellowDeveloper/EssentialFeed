@@ -12,9 +12,9 @@
     "codeCoverage" : {
       "targets" : [
         {
-          "containerPath" : "container:EssentialFeed02.xcodeproj",
+          "containerPath" : "container:EssentialFeed.xcodeproj",
           "identifier" : "3AF85ADF2BC102AB004FBE32",
-          "name" : "EssentialFeed02"
+          "name" : "EssentialFeed"
         }
       ]
     },
@@ -24,9 +24,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:EssentialFeed02.xcodeproj",
+        "containerPath" : "container:EssentialFeed.xcodeproj",
         "identifier" : "3AF85AE72BC102AC004FBE32",
-        "name" : "EssentialFeed02Tests"
+        "name" : "EssentialFeedTests"
       }
     }
   ],
