@@ -4,7 +4,7 @@
       "id" : "FE824BEB-F496-4CAE-9C41-44E64F68B4A3",
       "name" : "Test Scheme Action",
       "options" : {
-
+        "undefinedBehaviorSanitizerEnabled" : true
       }
     }
   ],
@@ -19,10 +19,14 @@
       ]
     },
     "testExecutionOrdering" : "random",
-    "testTimeoutsEnabled" : true
+    "testRepetitionMode" : "fixedIterations",
+    "testTimeoutsEnabled" : true,
+    "threadSanitizerEnabled" : true,
+    "undefinedBehaviorSanitizerEnabled" : true
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:EssentialFeed.xcodeproj",
         "identifier" : "3AF85AE72BC102AC004FBE32",

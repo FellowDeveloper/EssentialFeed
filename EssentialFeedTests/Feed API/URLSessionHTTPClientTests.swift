@@ -35,8 +35,59 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         makeSUT().get(from: url, completion: { _ in })
         
+        wait(for: [exp], timeout: 0.5)
+    }
+    
+    func test_getFromURL_performsGETRequestWithGivenURL3() {
+        let url = anyURL()
+        
+        let exp = XCTestExpectation(description: "Wait for request")
+        URLProtocolStub.observeRequests { request in
+            XCTAssertEqual(request.url, url)
+            XCTAssertEqual(request.httpMethod, "GET")
+            exp.fulfill()
+        }
+        
+        
+        makeSUT().get(from: url, completion: { _ in })
+        
+        wait(for: [exp], timeout: 0.5)
+    }
+    
+    func test_getFromURL_performsGETRequestWithGivenURL4() {
+        let url = anyURL()
+        
+        let exp = XCTestExpectation(description: "Wait for request")
+        URLProtocolStub.observeRequests { request in
+            XCTAssertEqual(request.url, url)
+            XCTAssertEqual(request.httpMethod, "GET")
+            exp.fulfill()
+        }
+        
+        
+        makeSUT().get(from: url, completion: { _ in })
+        
         wait(for: [exp], timeout: 0.01)
     }
+    
+    func test_getFromURL_performsGETRequestWithGivenURL5() {
+        let url = anyURL()
+        
+        let exp = XCTestExpectation(description: "Wait for request")
+        URLProtocolStub.observeRequests { request in
+            XCTAssertEqual(request.url, url)
+            XCTAssertEqual(request.httpMethod, "GET")
+            exp.fulfill()
+        }
+        
+        
+        makeSUT().get(from: url, completion: { _ in })
+        
+        wait(for: [exp], timeout: 0.01)
+    }
+    
+    
+    
     
     func test_getFromURL_failsOnRequestError() {
         let requestError = NSError(domain: "any error", code: 42)
@@ -138,66 +189,10 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     private func anyData() -> Data {
-        Data("any data".utf8)
+        Data("any data three".utf8)
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
         HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion:nil, headerFields: nil)!
-    }
-    
-    private class URLProtocolStub: URLProtocol {
-        private static var stub: Stub?
-        private static var requestsObserver: ((URLRequest) -> (Void))?
-        
-        private struct Stub {
-            let error: Error?
-            let data: Data?
-            let response: URLResponse?
-        }
-        
-        static func observeRequests(observer: @escaping (URLRequest) -> (Void)) {
-            requestsObserver = observer
-        }
-        
-        static func stub(data: Data?, response: URLResponse?, error: Error?) {
-            stub = Stub(error: error, data: data, response: response)
-        }
-        
-        static func startIntercepting() {
-            URLProtocol.registerClass(URLProtocolStub.self)
-        }
-        
-        static func stopIntercepting() {
-            URLProtocol.unregisterClass(URLProtocolStub.self)
-            stub = nil
-            requestsObserver = nil
-        }
-        
-        override class func canInit(with request: URLRequest) -> Bool {
-            requestsObserver?(request)
-            return true
-        }
-        
-        override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-            request
-        }
-        
-        override func startLoading() {
-            if let data = URLProtocolStub.stub?.data {
-                client?.urlProtocol(self, didLoad: data)
-            }
-            
-            if let response = URLProtocolStub.stub?.response {
-                client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-            }
-            
-            if let error = URLProtocolStub.stub?.error {
-                client?.urlProtocol(self, didFailWithError: error)
-            }
-            
-            client?.urlProtocolDidFinishLoading(self)
-        }
-        
-        override func stopLoading() {}
     }
 }
