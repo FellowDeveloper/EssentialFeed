@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-final class URLSessionHTTPClientTests: XCTestCase {
+final class URLSessionHTTPClientTests3: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -35,7 +35,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         makeSUT().get(from: url, completion: { _ in })
         
-        wait(for: [exp], timeout: 0.5)
+        wait(for: [exp], timeout: 0.01)
     }
     
     func test_getFromURL_performsGETRequestWithGivenURL3() {
@@ -67,7 +67,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         makeSUT().get(from: url, completion: { _ in })
         
-        wait(for: [exp], timeout: 0.01)
+        wait(for: [exp], timeout: 0.5)
     }
     
     func test_getFromURL_performsGETRequestWithGivenURL5() {
@@ -83,7 +83,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         makeSUT().get(from: url, completion: { _ in })
         
-        wait(for: [exp], timeout: 0.01)
+        wait(for: [exp], timeout: 0.5)
     }
     
     
@@ -189,7 +189,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     private func anyData() -> Data {
-        Data("any data three".utf8)
+        Data("any data".utf8)
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {
